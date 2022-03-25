@@ -1,4 +1,4 @@
-package com.app.videotab
+package com.app.videotab.listener
 
 import com.app.videotab.model.VideoTabResponse
 import retrofit2.Response

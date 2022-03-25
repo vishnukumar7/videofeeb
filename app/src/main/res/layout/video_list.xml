@@ -7,7 +7,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:background="@color/background_color"
+        android:background="@color/feed_list"
         android:orientation="horizontal">
 
         <com.makeramen.roundedimageview.RoundedImageView

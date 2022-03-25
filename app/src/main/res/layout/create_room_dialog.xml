@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:background="@drawable/top_round_corner"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:textColor="@color/white"
+            android:padding="5dp"
+            android:text="@string/enter_the_room_name"
+            android:textSize="16sp"
+            android:layout_height="wrap_content"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:layout_width="match_parent"
+            android:padding="10dp"
+            android:layout_marginTop="5dp"
+            android:id="@+id/roomName"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:background="@drawable/round_white"
+            android:layout_height="wrap_content"/>
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:layout_width="wrap_content"
+            android:text="@string/islive"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:id="@+id/checkLive"
+            android:padding="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_height="wrap_content"/>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:id="@+id/cancelBtn"
+                android:text="@string/cancel"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_toStartOf="@id/createBtn"
+                android:paddingTop="10dp"
+                android:layout_marginEnd="20sp"
+                android:paddingBottom="10dp"
+                android:paddingStart="20sp"
+                android:paddingEnd="20sp"
+                android:backgroundTint="@color/cancel"
+                android:background="@drawable/round_white"
+                android:layout_height="wrap_content"/>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:id="@+id/createBtn"
+                android:layout_alignParentEnd="true"
+                android:text="@string/create"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingStart="20sp"
+                android:paddingEnd="20sp"
+                android:backgroundTint="@color/feed_float_btn"
+                android:background="@drawable/round_white"
+                android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

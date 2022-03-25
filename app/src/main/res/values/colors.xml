@@ -10,4 +10,11 @@
     <color name="background_color">#99373739</color>
     <color name="colorTransparentWhite">#59FFFFFF</color>
     <color name="colorGrey">#6E6E6E</color>
+    <color name="feed_float_btn">#ffc68a</color>
+    <color name="bg">#2d2d2d</color>
+    <color name="feed_list">#717171</color>
+    <color name="divider">#3c3c3c</color>
+    <color name="red">#ff0000</color>
+    <color name="cancel">#aaaaaa</color>
+
 </resources>

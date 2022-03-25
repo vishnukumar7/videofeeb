@@ -1,8 +1,7 @@
 package com.app.videotab
 
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.*
+import com.app.videotab.model.Feed
 import com.app.videotab.model.VideoTabResponse
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -12,6 +11,8 @@ import kotlinx.coroutines.withContext
 class AppViewModel(private val appRepository: AppRepository): ViewModel() {
 
     val videoTabResponse: MutableLiveData<VideoTabResponse> = MutableLiveData()
+
+    val feedListResponse: LiveData<MutableList<Feed>> =appRepository.feedList.asLiveData()
 
     fun getVideoTabResponse(page: Int){
         CoroutineScope(Dispatchers.IO).launch {

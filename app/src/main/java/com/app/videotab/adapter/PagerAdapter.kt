@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.app.videotab.PagerListener
+import com.app.videotab.listener.PagerListener
 import com.app.videotab.R
 import com.app.videotab.databinding.PagerListBinding
 
@@ -40,7 +40,7 @@ class PagerAdapter(private val context: Context,private val pagerListener: Pager
         holder.itemBinding.pageNo.text = "${position + 1}"
         if (currentPage != position + 1) {
             holder.itemBinding.mainLay.setOnClickListener {
-                pagerListener.setPageNumber(position + 1)
+                pagerListener.setPosition(position + 1)
             }
             holder.itemBinding.mainLay.setBackgroundColor(context.getColor(R.color.black))
             holder.itemBinding.pageNo.setTextColor(context.getColor(R.color.white))

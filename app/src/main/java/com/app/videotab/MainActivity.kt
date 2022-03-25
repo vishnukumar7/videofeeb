@@ -22,8 +22,8 @@ class MainActivity : AppCompatActivity() {
         binding=DataBindingUtil.setContentView(this,R.layout.activity_main)
         (application as MyApplication).getNetComponent().inject(this)
         val videoPagerAdapter = ViewPagerAdapter(supportFragmentManager)
-        videoPagerAdapter.addFragment(VideoListFragment(),"Video List")
-        videoPagerAdapter.addFragment(FeedTabListFragment(),"feed list")
+        videoPagerAdapter.addFragment(VideoListFragment(),"Videos")
+        videoPagerAdapter.addFragment(FeedTabListFragment(),"Feeds")
         binding.viewPager.adapter=videoPagerAdapter
         binding.tabLayout.setupWithViewPager(binding.viewPager)
 

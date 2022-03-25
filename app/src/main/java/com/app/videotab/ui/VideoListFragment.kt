@@ -5,13 +5,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.app.videotab.MainActivity
-import com.app.videotab.PagerListener
+import com.app.videotab.listener.PagerListener
 import com.app.videotab.R
 import com.app.videotab.adapter.PagerAdapter
 import com.app.videotab.adapter.VideoListAdapter
@@ -46,23 +45,10 @@ class VideoListFragment : Fragment(), PagerListener {
         progressDialog = ProgressDialog(activity)
         progressDialog.setMessage("Loading..Please Wait...")
         videoListPage()
-        binding.prevPage.visibility=View.GONE
         binding.recyclerViewPager.setHasFixedSize(false)
         binding.recyclerViewPager.layoutManager=LinearLayoutManager(activity,RecyclerView.HORIZONTAL,false)
 binding.recyclerViewPager.adapter=pagerAdapter
-        binding.prevPage.setOnClickListener {
-            if (currentPage > 1) {
-                currentPage--
-                videoListPage()
-            }
-        }
 
-        binding.nextPage.setOnClickListener {
-            if (totalNoOfPages > currentPage) {
-                currentPage++
-                videoListPage()
-            }
-        }
     }
 
     fun videoListPage() {
@@ -81,28 +67,12 @@ binding.recyclerViewPager.adapter=pagerAdapter
                 pagerAdapter.notifyDataSetChanged()
                 dataItemList.addAll(it.data)
                 videoListAdapter.notifyDataSetChanged()
-                binding.pageNo.text="$currentPage"
-                if(currentPage==1 && totalNoOfPages==1){
-                    binding.prevPage.visibility = View.GONE
-                    binding.nextPage.visibility=View.GONE
-                }
-                else if(currentPage==1) {
-                    binding.prevPage.visibility = View.GONE
-                    binding.nextPage.visibility=View.VISIBLE
-                }
-                else if(currentPage>=totalNoOfPages) {
-                    binding.prevPage.visibility=View.VISIBLE
-                    binding.nextPage.visibility=View.GONE
-                }else{
-                    binding.prevPage.visibility = View.VISIBLE
-                    binding.nextPage.visibility=View.VISIBLE
-                }
             }
 
         }
     }
 
-    override fun setPageNumber(page: Int) {
+    override fun setPosition(page: Int) {
         currentPage=page
         videoListPage()
     }

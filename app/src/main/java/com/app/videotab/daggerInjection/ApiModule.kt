@@ -1,6 +1,10 @@
 package com.app.videotab.daggerInjection
 
 import android.app.Application
+import android.content.Context
+import androidx.room.Room
+import com.app.videotab.listener.AppDatabase
+import com.app.videotab.model.FeedDao
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
@@ -14,7 +18,7 @@ import javax.inject.Singleton
 
 
 @Module
-class ApiModule(private var baseUrl:String) {
+class ApiModule(private var baseUrl:String,private val context: Context) {
 
     @Provides
     @Singleton
@@ -49,4 +53,22 @@ class ApiModule(private var baseUrl:String) {
             .client(okHttpClient)
             .build()
     }
+
+    @Provides
+    @Singleton
+    fun provideDatabase(): AppDatabase {
+        return Room.databaseBuilder(context,AppDatabase::class.java,"feed")
+            .allowMainThreadQueries()
+            .fallbackToDestructiveMigration()
+            .build()
+    }
+
+    @Provides
+    @Singleton
+    fun provideFeedDao(database: AppDatabase): FeedDao {
+        return database.feedDao()
+    }
+
+
+
 }

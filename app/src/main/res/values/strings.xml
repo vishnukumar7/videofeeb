@@ -2,4 +2,14 @@
     <string name="app_name">videoTab</string>
     <string name="name">Name</string>
     <string name="email">Email</string>
+    <string name="live">Live</string>
+    <string name="enter_the_room_name">Enter the room name</string>
+    <string name="islive">isLive</string>
+    <string name="create">Create</string>
+    <string name="cancel">Cancel</string>
+    <string name="name_required">Room name should not be empty</string>
+    <string name="room_created">Room is Created</string>
+    <string name="room_updated">Room is Updated</string>
+    <string name="room_name">Room Name</string>
+    <string name="room_already">Room name already exists</string>
 </resources>
